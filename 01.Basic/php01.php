@@ -156,3 +156,141 @@ if ($n % 2 == 0) {
 } else {
   echo "$n Is An Odd Number";
 }
+
+echo "\n";
+
+// nasted if else
+$condition1 = true;
+$condition2 = false;
+$condition3 = true;
+
+if ($condition1) {
+  if ($condition2) {
+    if ($condition3) {
+      echo 'Hello';
+    } else {
+      echo "No 1";
+    }
+  } else {
+    echo "No 2";
+  }
+} else {
+  echo "No 3";
+}
+
+echo "\n";
+
+if ($condition1 && $condition2 && $condition3) {
+  echo 'Hello';
+} elseif ($condition1 && $condition2) {
+  echo "No 1";
+} elseif ($condition1) {
+  echo "No 2";
+} else {
+  echo 'No 3';
+}
+
+echo "\n";
+//Ternary Operator
+$n = 12;
+
+if (12 == $n) {
+  echo 'Twelve';
+} elseif (10 == $n) {
+  echo 'Ten';
+} else {
+  echo "A Number";
+}
+
+echo "\n";
+
+// $numberInWord = (12 == $n) ? "Twelve" : (10 == $n) ? "Ten" : "A Number";
+
+// echo $numberInWord;
+
+echo "\n";
+
+$result = $n % 2 == 0 ? "Even Number " : "Odd Number";
+
+echo $result;
+
+echo "\n";
+
+// Switch Case
+$num = 12;
+$r = $n % 2;
+
+switch ($r) {
+  case 0:
+    echo "{$num} Is A Even Number";
+    break;
+
+  default:
+    echo "{$num} Is A Odd Number";
+    break;
+}
+
+echo PHP_EOL;
+
+//Atlernative If Else
+if ($num % 2 == 0) :
+  echo "{$num} Is A Even Number";
+  echo PHP_EOL;
+else :
+  echo "{$num} Is A Odd Number";
+  echo PHP_EOL;
+endif;
+
+echo PHP_EOL;
+
+
+//Loop
+for ($i = 1; $i < 5; $i++) {
+  echo $i;
+  echo PHP_EOL;
+}
+
+echo PHP_EOL;
+
+for ($i = 1; $i < 10; $i += 2) {
+  echo $i;
+  echo PHP_EOL;
+}
+
+echo PHP_EOL;
+
+$i = 0;
+while ($i < 5) {
+  $i++;
+  echo $i . PHP_EOL;
+}
+
+echo PHP_EOL;
+
+$i = 0;
+do {
+  $i++;
+  echo $i . PHP_EOL;
+} while ($i < 5);
+
+echo PHP_EOL;
+
+$n = 5;
+for ($i = $n, $factorial = 1; $i > 1; $i--) {
+  $factorial *= $i;
+}
+
+printf("Factorial Of %d Is %d", $n, $factorial);
+
+echo PHP_EOL;
+
+$veryOld = 0;
+$old = 1;
+$new = 1;
+
+for ($i = 0; $i < 10; $i++) {
+  echo $veryOld . " ";
+  $old = $new;
+  $new = $old + $veryOld;
+  $veryOld = $old;
+}
