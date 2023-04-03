@@ -99,3 +99,85 @@ doTheLargerTask();
 
 
 //Recursion
+function printN($i)
+{
+  if ($i >= 10) {
+    return;
+  }
+  echo $i . "\n";
+  $i++;
+  printN($i);
+}
+// printN(0);
+
+function printNumber($start, $end, $stepping = 1)
+{
+  if ($start > $end) {
+    return;
+  }
+  echo $start . "\n";
+  $start += $stepping;
+  printNumber($start, $end, $stepping);
+}
+
+printNumber(21, 37, 2);
+
+
+// Fibonacci 
+function fibonacci($old, $new, $end)
+{
+  static $start;
+  $start = $start ?? 1;
+
+  if ($start > $end) {
+    return;
+  }
+  $start++;
+
+  echo $old . " ";
+  $_temp = $old + $new;
+  $old = $new;
+  $new = $_temp;
+
+  fibonacci($old, $new, $end);
+}
+
+fibonacci(0, 1, 10);
+
+echo PHP_EOL;
+
+function factorialTwo($n)
+{
+  if ($n <= 1) {
+    return 1;
+  }
+  return $n * factorialTwo($n - 1);
+}
+
+echo factorialTwo(5);
+
+echo PHP_EOL;
+
+// Variable Scope
+$name = "Topu";
+
+function callName()
+{
+  global $name;
+  echo $name;
+}
+callName();
+
+echo PHP_EOL;
+
+function doSomething()
+{
+  static $i; //static scope
+  $i = $i ?? 0;
+  $i++;
+  echo $i;
+  echo "\n";
+}
+doSomething();
+doSomething();
+doSomething();
