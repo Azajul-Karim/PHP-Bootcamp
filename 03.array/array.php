@@ -171,3 +171,141 @@ if (isset($name1) && (is_numeric($name1) || $name1 != '')) {
 
 
 // Data Extract
+// $fruits = array(
+//   "Apple",
+//   "Banana",
+//   "Orange",
+//   "Plum",
+//   "Dates",
+//   "Mango"
+// );
+
+// $someFruits = array_slice($fruits, 2);
+// $someFruits = array_slice($fruits, 2, 3);
+// $someFruits = array_slice($fruits, 2, -1);
+// $someFruits = array_slice($fruits, -5, -1);
+// $someFruits = array_slice($fruits, 3,  3, true);
+
+
+// print_r($someFruits);
+// print_r($fruits);
+
+
+//Splice
+// $someFruits = array_splice($fruits, 2, 2);
+
+// $someFruits = array_splice($fruits, 2, -2);
+
+
+// print_r($someFruits);
+// print_r($fruits);
+
+
+//Array Merge
+// $newFruits1 = array_slice($fruits, 0, 3);
+// $newFruits2 = array_splice($fruits, 3);
+
+// $newFruits = array_merge($newFruits1, $newFruits2);
+
+// print_r($newFruits1);
+// print_r($newFruits2);
+// print_r($newFruits);
+
+
+//Array Sort
+$fruits = array(
+  "Apple", "Banana", "Orange", "Plum", "Dates", "Mango"
+);
+
+$numbers = array(23, 4, 5, 6, 22, 12, 32, 45, 89, 0, 9, 8);
+
+// sort($fruits);
+// print_r($fruits);
+
+// sort($numbers);
+// print_r($numbers);
+
+echo PHP_EOL;
+
+// Array Search
+if (in_array(89, $numbers)) {
+  echo "56 is Found";
+}
+
+echo PHP_EOL;
+
+$offset = array_search(89, $numbers);
+// echo $offset;
+
+
+//Walk
+$numbers = array(23, 4, 5, 6, 22, 12, 32, 45, 89, 0, 9, 8);
+sort($numbers);
+
+function squre($n)
+{
+  printf("Squre Of %d Is %d \n", $n, $n * $n);
+}
+
+// array_walk($numbers, "squre");
+
+//Map
+function cube($n)
+{
+  return $n * $n * $n;
+}
+
+$newArr = array_map("cube", $numbers);
+
+print_r($newArr);
+
+//Filter
+function even($n)
+{
+  return $n % 2 === 0;
+}
+
+$newFilter = array_filter($numbers, "even");
+
+print_r($newFilter);
+
+
+// Reduce
+
+$numbers = array(1, 2, 3, 4, 5);
+
+function sum($oldValue = 0, $newValue)
+{
+  return $oldValue + $newValue;
+}
+
+$sum = array_reduce($numbers, 'sum');
+echo $sum;
+
+echo PHP_EOL;
+//List Function
+$color = [122, 233, 65];
+// $red = $color[0];
+// $green = $color[1];
+// $blue = $color[2];
+
+list($red, $green, $blue) = $color;
+
+echo $green;
+
+// Range Function
+$numbers = range(12, 20, 2);
+
+// print_r($numbers);
+
+echo PHP_EOL;
+
+//shuffle
+$numbers = range(40, 72);
+
+shuffle($numbers);
+
+// print_r($numbers);
+
+$randomNum = $numbers[3];
+echo $randomNum;
