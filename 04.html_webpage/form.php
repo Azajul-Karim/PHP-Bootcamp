@@ -19,13 +19,25 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, ab?</p>
 
         <p>
-          <?php if (isset($_GET['fname']) && !empty($_GET['fname'])) { ?>
-            First Name: <?php echo $_GET['fname']; ?> <br>
-          <?php } ?>
 
-          <?php if (isset($_GET['lname']) && !empty($_GET['lname'])) { ?>
-            Last Name: <?php echo $_GET['lname']; ?> <br>
-          <?php } ?>
+          <?php
+          $fname = "";
+          $lname = "";
+
+          ?>
+
+          <?php if (isset($_REQUEST['fname']) && !empty($_REQUEST['fname'])) {
+            $fname = htmlspecialchars($_REQUEST['fname']);
+          } ?>
+
+          <?php if (isset($_REQUEST['lname']) && !empty($_REQUEST['lname'])) {
+            $lname = htmlspecialchars($_REQUEST['lname']);
+          } ?>
+        </p>
+        First Name: <?php echo $fname; ?> <br>
+        Last Name: <?php echo $lname; ?>
+        <p>
+
         </p>
       </div>
     </div>
@@ -33,10 +45,12 @@
       <div class="column column-60 column-offset-20">
         <form method="GET">
           <label for="fname">First Name</label>
-          <input type="text" name="fname" id="fname">
+          <input type="text" name="fname" id="fname" value="<?php
+                                                            echo $fname; ?>">
+          <label for=" lname">Last Name</label>
+          <input type="text" name="lname" id="lname" value="<?php
+                                                            echo $lname; ?>">
 
-          <label for="lname">Last Name</label>
-          <input type="text" name="lname" id="lname">
 
           <button type="submit">Submit</button>
         </form>
