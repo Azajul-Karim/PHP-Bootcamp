@@ -28,3 +28,9 @@ $length = strlen($string);
 echo substr($string, $length - 3);
 echo PHP_EOL;
 echo substr($string, -7, 3);
+
+
+// reverse string
+
+echo PHP_EOL;
+echo strrev($string);
