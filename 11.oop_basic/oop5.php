@@ -81,3 +81,37 @@ $math = new MathCalculator();
 echo $math->fibonacci(5)."<br>";
 
 // echo MathCalculator::fibonacci(5)."<br>";
+
+//static extends
+
+class A{
+  static function who(){
+    echo "A";
+  }
+}
+
+class B extends A{
+  static function who(){
+    echo "B";
+    parent::who();
+  }
+}
+
+B::who();
+echo "<br>";
+
+//Constans
+
+class MyClass{
+  const CITY = "Dhaka";
+
+  function sayHi(){
+    echo "Hi from ".self::CITY;
+  }
+}
+
+$myclass = new MyClass();
+$myclass->sayHi();
+echo "<br>";
+echo MyClass::CITY;
+
