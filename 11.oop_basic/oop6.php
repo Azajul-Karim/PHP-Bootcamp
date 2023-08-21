@@ -52,41 +52,41 @@ echo $student->name . "<br>";
 
 //interface practice
 
-class DistrictCollection implements IteratorAggregate, Countable{
+// class DistrictCollection implements IteratorAggregate, Countable{
 
-  private $districts;
+//   private $districts;
 
-  function __construct(){
-    $this->districts = array();
-  }
+//   function __construct(){
+//     $this->districts = array();
+//   }
 
-  function add($district){
-    array_push($this->districts, $district);
-  }
+//   function add($district){
+//     array_push($this->districts, $district);
+//   }
 
-  function getDistricts(){
-    return $this->districts;
-  }
+//   function getDistricts(){
+//     return $this->districts;
+//   }
 
-  function getIterator(){
-    return new ArrayIterator($this->districts);
-  }
+//   function getIterator(){
+//     return new ArrayIterator($this->districts);
+//   }
 
-  function count(){
+//   function count(){
    
-    return count($this->districts);
-  }
-}
+//     return count($this->districts);
+//   }
+// }
 
-$districtCollection = new DistrictCollection();
-$districtCollection->add("Dhaka");
-$districtCollection->add("Rajshahi");
-$districtCollection->add("Khulna");
-$districtCollection->add("Sylhet");
-$districtCollection->add("Barishal");
+// $districtCollection = new DistrictCollection();
+// $districtCollection->add("Dhaka");
+// $districtCollection->add("Rajshahi");
+// $districtCollection->add("Khulna");
+// $districtCollection->add("Sylhet");
+// $districtCollection->add("Barishal");
 
-foreach($districtCollection as $district){
-  echo $district."<br>";
-}
+// foreach($districtCollection as $district){
+//   echo $district."<br>";
+// }
 
-echo count($districtCollection);
+// echo count($districtCollection);
